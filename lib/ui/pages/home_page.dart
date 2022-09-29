@@ -31,18 +31,7 @@ class HomePage extends StatelessWidget {
 
     Widget onGoingAnime() {
       Widget title() {
-        return Container(
-          margin: const EdgeInsets.only(
-            top: 22,
-          ),
-          child: Text(
-            'Anime Ongoing',
-            style: whiteTextStyle.copyWith(
-              fontSize: 24,
-              fontWeight: semiBold,
-            ),
-          ),
-        );
+        return CustomTitle(title: 'Anime Ongoing');
       }
 
       Widget animeCard() {
@@ -56,19 +45,24 @@ class HomePage extends StatelessWidget {
                 title: 'Full Metal Alchemist Brotherhood',
               ),
               AnimeOngoingCard(
-                imageUrl: 'assets/anime1.jpg',
-                episode: '90',
-                title: 'Full Metal Alchemist Brotherhood',
+                imageUrl: 'assets/anime2.jpg',
+                episode: '12',
+                title: 'Kaguya-sama wa Kokurasetai: Ultra Romantic',
               ),
               AnimeOngoingCard(
-                imageUrl: 'assets/anime1.jpg',
-                episode: '90',
-                title: 'Full Metal Alchemist Brotherhood',
+                imageUrl: 'assets/anime3.jpg',
+                episode: '51',
+                title: 'Gintama',
               ),
               AnimeOngoingCard(
-                imageUrl: 'assets/anime1.jpg',
-                episode: '90',
-                title: 'Full Metal Alchemist Brotherhood',
+                imageUrl: 'assets/anime4.jpg',
+                episode: '154',
+                title: 'Hunter X Hunter',
+              ),
+              AnimeOngoingCard(
+                imageUrl: 'assets/anime5.jpg',
+                episode: '11',
+                title: 'Kimetsu no Yaiba: Yuukaku-hen',
               ),
             ],
           ),
@@ -76,9 +70,28 @@ class HomePage extends StatelessWidget {
       }
 
       return Container(
-        padding: EdgeInsets.symmetric(
-          horizontal: defaultMargin,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            title(),
+            animeCard(),
+          ],
         ),
+      );
+    }
+
+    Widget completeAnime() {
+      Widget title() {
+        return CustomTitle(title: 'Complete Anime');
+      }
+
+      Widget animeCard() {
+        return GridView.count(
+          crossAxisCount: 3,
+        );
+      }
+
+      return Container(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -90,12 +103,14 @@ class HomePage extends StatelessWidget {
     }
 
     return Scaffold(
-        backgroundColor: kBackgroudColor,
-        body: ListView(
-          children: [
-            header(),
-            onGoingAnime(),
-          ],
-        ));
+      backgroundColor: kBackgroudColor,
+      body: ListView(
+        children: [
+          header(),
+          onGoingAnime(),
+          completeAnime(),
+        ],
+      ),
+    );
   }
 }

@@ -15,12 +15,11 @@ class AnimeOngoingCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(
-        top: 10,
-        right: 10,
+      margin: EdgeInsets.only(
+        left: defaultMargin,
       ),
-      height: 310,
-      width: 180,
+      height: 260,
+      width: 130,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(
           defaultRadius,
@@ -29,8 +28,8 @@ class AnimeOngoingCard extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            height: 250,
-            width: 180,
+            height: 200,
+            width: 130,
             margin: const EdgeInsets.only(bottom: 10),
             decoration: BoxDecoration(
               image: DecorationImage(
@@ -51,7 +50,7 @@ class AnimeOngoingCard extends StatelessWidget {
                     height: 25,
                     width: 100,
                     decoration: BoxDecoration(
-                      color: kPrimaryColor,
+                      color: kPrimaryColor.withOpacity(0.8),
                       borderRadius: BorderRadius.only(
                         topRight: Radius.circular(defaultRadius),
                         bottomLeft: Radius.circular(defaultRadius),
@@ -74,7 +73,7 @@ class AnimeOngoingCard extends StatelessWidget {
           Text(
             title,
             style: whiteTextStyle.copyWith(
-              fontSize: 16,
+              fontSize: 12,
               fontWeight: semiBold,
             ),
             textAlign: TextAlign.center,
