@@ -87,11 +87,65 @@ class HomePage extends StatelessWidget {
 
       Widget animeCard() {
         return GridView.count(
+          padding: EdgeInsets.symmetric(
+            horizontal: defaultMargin,
+          ),
           crossAxisCount: 3,
+          childAspectRatio: 1 / 2,
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 10,
+          physics: NeverScrollableScrollPhysics(),
+          shrinkWrap: true,
+          children: [
+            AnimeCompleteCard(
+              imageUrl: 'assets/anime8.jpg',
+              episode: '12',
+              title: 'Shingeki no Kyojin: The Final Season Part 2',
+            ),
+            AnimeCompleteCard(
+              imageUrl: 'assets/anime2.jpg',
+              episode: '13',
+              title: 'Kaguya-sama wa Kokurasetai: Ultra Romantic',
+            ),
+            AnimeCompleteCard(
+              imageUrl: 'assets/anime4.jpg',
+              episode: '12',
+              title: 'Hunter X Hunter',
+            ),
+            AnimeCompleteCard(
+              imageUrl: 'assets/anime11.jpg',
+              episode: '26',
+              title: 'Cowboy Bebop',
+            ),
+            AnimeCompleteCard(
+              imageUrl: 'assets/anime9.jpg',
+              episode: '12',
+              title:
+                  'Haikyu!!: Karasuno Koukou vs. Shiratorizawa Gakuen Koukou',
+            ),
+            AnimeCompleteCard(
+              imageUrl: 'assets/anime5.jpg',
+              episode: '11',
+              title: 'Kimetsu no Yaiba: Yuukaku-hen',
+            ),
+            AnimeCompleteCard(
+              imageUrl: 'assets/anime3.jpg',
+              episode: '51',
+              title: 'Gintama',
+            ),
+            AnimeCompleteCard(
+              imageUrl: 'assets/anime1.jpg',
+              episode: '64',
+              title: 'Fullmetal Alchemist: Brotherhood',
+            ),
+          ],
         );
       }
 
       return Container(
+        margin: const EdgeInsets.only(
+          bottom: 100,
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

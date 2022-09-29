@@ -1,12 +1,13 @@
 part of 'shared.dart';
 
-double defaultMargin = 24;
+double defaultMargin = 15;
 double defaultRadius = 18;
 
 Color kBackgroudColor = const Color(0xff0E0E0E);
 Color kPrimaryColor = const Color(0xff4C2781);
 Color kWhiteColor = const Color(0xffFFFFFF);
 Color kGreyColor = const Color(0xff383838);
+Color kTransparentColor = Colors.transparent;
 
 TextStyle whiteTextStyle = GoogleFonts.poppins(
   color: kWhiteColor,

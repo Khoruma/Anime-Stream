@@ -1,11 +1,11 @@
 part of 'widgets.dart';
 
-class AnimeOngoingCard extends StatelessWidget {
+class AnimeCompleteCard extends StatelessWidget {
   final String imageUrl;
   final String episode;
   final String title;
 
-  const AnimeOngoingCard({
+  const AnimeCompleteCard({
     Key? key,
     required this.imageUrl,
     required this.episode,
@@ -15,11 +15,7 @@ class AnimeOngoingCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(
-        left: defaultMargin,
-      ),
-      height: 260,
-      width: 150,
+      height: 230,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(
           defaultRadius,
@@ -28,8 +24,7 @@ class AnimeOngoingCard extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            height: 200,
-            width: 150,
+            height: 180,
             margin: const EdgeInsets.only(bottom: 10),
             decoration: BoxDecoration(
               image: DecorationImage(
@@ -48,7 +43,7 @@ class AnimeOngoingCard extends StatelessWidget {
                   alignment: Alignment.bottomLeft,
                   child: Container(
                     height: 25,
-                    width: 100,
+                    width: 80,
                     decoration: BoxDecoration(
                       color: kPrimaryColor.withOpacity(0.8),
                       borderRadius: BorderRadius.only(
@@ -60,7 +55,7 @@ class AnimeOngoingCard extends StatelessWidget {
                       child: Text(
                         'Episode $episode',
                         style: whiteTextStyle.copyWith(
-                          fontSize: 10,
+                          fontSize: 9,
                           fontWeight: medium,
                         ),
                       ),

@@ -42,7 +42,9 @@ class SignInPage extends StatelessWidget {
         return CustomButton(
           title: 'Sign In',
           onPressed: () {
-            Navigator.pushNamed(context, '/main-page');
+            context.read<PageCubit>().setPage(0);
+            Navigator.pushNamedAndRemoveUntil(
+                context, '/main', (route) => false);
           },
         );
       }
