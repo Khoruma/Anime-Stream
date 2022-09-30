@@ -14,73 +14,82 @@ class AnimeOngoingCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.only(
-        left: defaultMargin,
-      ),
-      height: 260,
-      width: 150,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(
-          defaultRadius,
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => DetailPage(),
+            ));
+      },
+      child: Container(
+        margin: EdgeInsets.only(
+          left: defaultMargin,
         ),
-      ),
-      child: Column(
-        children: [
-          Container(
-            height: 200,
-            width: 150,
-            margin: const EdgeInsets.only(bottom: 10),
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                fit: BoxFit.cover,
-                image: AssetImage(
-                  imageUrl,
+        height: 260,
+        width: 150,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(
+            defaultRadius,
+          ),
+        ),
+        child: Column(
+          children: [
+            Container(
+              height: 200,
+              width: 150,
+              margin: const EdgeInsets.only(bottom: 10),
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  fit: BoxFit.cover,
+                  image: AssetImage(
+                    imageUrl,
+                  ),
+                ),
+                borderRadius: BorderRadius.circular(
+                  defaultRadius,
                 ),
               ),
-              borderRadius: BorderRadius.circular(
-                defaultRadius,
-              ),
-            ),
-            child: Stack(
-              children: [
-                Align(
-                  alignment: Alignment.bottomLeft,
-                  child: Container(
-                    height: 25,
-                    width: 100,
-                    decoration: BoxDecoration(
-                      color: kPrimaryColor.withOpacity(0.8),
-                      borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(defaultRadius),
-                        bottomLeft: Radius.circular(defaultRadius),
+              child: Stack(
+                children: [
+                  Align(
+                    alignment: Alignment.bottomLeft,
+                    child: Container(
+                      height: 25,
+                      width: 100,
+                      decoration: BoxDecoration(
+                        color: kPrimaryColor.withOpacity(0.8),
+                        borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(defaultRadius),
+                          bottomLeft: Radius.circular(defaultRadius),
+                        ),
                       ),
-                    ),
-                    child: Center(
-                      child: Text(
-                        'Episode $episode',
-                        style: whiteTextStyle.copyWith(
-                          fontSize: 10,
-                          fontWeight: medium,
+                      child: Center(
+                        child: Text(
+                          'Episode $episode',
+                          style: whiteTextStyle.copyWith(
+                            fontSize: 10,
+                            fontWeight: medium,
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                )
-              ],
+                  )
+                ],
+              ),
             ),
-          ),
-          Text(
-            title,
-            style: whiteTextStyle.copyWith(
-              fontSize: 12,
-              fontWeight: semiBold,
-            ),
-            textAlign: TextAlign.center,
-            maxLines: 2,
-            overflow: TextOverflow.ellipsis,
-          )
-        ],
+            Text(
+              title,
+              style: whiteTextStyle.copyWith(
+                fontSize: 12,
+                fontWeight: semiBold,
+              ),
+              textAlign: TextAlign.center,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+            )
+          ],
+        ),
       ),
     );
   }
