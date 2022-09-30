@@ -1,14 +1,17 @@
 part of 'pages.dart';
 
 class DetailPage extends StatelessWidget {
-  const DetailPage({Key? key}) : super(key: key);
+  DetailPage({Key? key}) : super(key: key);
+
+  final List<Map> episode =
+      List.generate(12, (index) => {"id": index, "name": "$index"}).toList();
 
   @override
   Widget build(BuildContext context) {
     Widget backgroundImage() {
       return Container(
         width: double.infinity,
-        height: 245,
+        height: 280,
         decoration: BoxDecoration(
           image: DecorationImage(
             fit: BoxFit.cover,
@@ -23,15 +26,15 @@ class DetailPage extends StatelessWidget {
     Widget customShadow() {
       return Container(
         width: double.infinity,
-        height: 70,
-        margin: const EdgeInsets.only(top: 175),
+        height: 80,
+        margin: const EdgeInsets.only(top: 205),
         decoration: BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
               kWhiteColor.withOpacity(0),
-              Colors.black.withOpacity(0.95),
+              kBackgroudColor.withOpacity(0.95),
             ],
           ),
         ),
@@ -45,9 +48,10 @@ class DetailPage extends StatelessWidget {
         ),
         child: Column(
           children: [
+            //* TITLE OF ANIME
             Container(
               margin: const EdgeInsets.only(
-                top: 255,
+                top: 310,
                 bottom: 15,
               ),
               child: Text(
@@ -58,8 +62,10 @@ class DetailPage extends StatelessWidget {
                 ),
               ),
             ),
+
+            //* BUTTON
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Container(
                   width: 160,
@@ -127,6 +133,8 @@ class DetailPage extends StatelessWidget {
                 ),
               ],
             ),
+
+            //* DETAIL ANIME
             Container(
               margin: const EdgeInsets.only(
                 top: 21,
@@ -222,6 +230,8 @@ class DetailPage extends StatelessWidget {
                 ],
               ),
             ),
+
+            //* SYNOPSIS
             Container(
               margin: const EdgeInsets.only(
                 top: 15,
@@ -236,10 +246,12 @@ class DetailPage extends StatelessWidget {
                 animation: true,
               ),
             ),
+
+            //* EPISODE
             Container(
               margin: const EdgeInsets.only(
                 top: 15,
-                bottom: 75,
+                bottom: 10,
               ),
               child: Column(
                 children: [
@@ -255,6 +267,34 @@ class DetailPage extends StatelessWidget {
                     ],
                   ),
                 ],
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.only(bottom: 20),
+              child: GridView.builder(
+                physics: const NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                    maxCrossAxisExtent: 40,
+                    childAspectRatio: 1,
+                    crossAxisSpacing: 10,
+                    mainAxisSpacing: 10),
+                itemCount: episode.length,
+                itemBuilder: (BuildContext ctx, index) {
+                  return Container(
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                        color: kPrimaryColor,
+                        borderRadius: BorderRadius.circular(10)),
+                    child: Text(
+                      episode[index]["name"],
+                      style: whiteTextStyle.copyWith(
+                        fontSize: 12,
+                        fontWeight: light,
+                      ),
+                    ),
+                  );
+                },
               ),
             ),
           ],
