@@ -5,24 +5,34 @@ class SaturdayReleasePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(
-        top: 120,
-        bottom: 100,
-      ),
-      child: ListView(
-        children: [
-          Column(
-            children: [
-              AnimeTile(
-                name: 'Kaguya-sama wa Kokurasetai: Ultra Romantic',
-                imageUrl: 'assets/anime2.jpg',
-                episode: '12',
+    return SafeArea(
+      child: Container(
+        margin: const EdgeInsets.only(
+          top: 130,
+        ),
+        child: ListView(
+          children: [
+            Container(
+              margin: EdgeInsets.only(
+                bottom: 100,
               ),
-            ],
-          ),
-        ],
+              child: Stack(
+                children: [
+                  Column(
+                    children: [
+                      AnimeTile(
+                        name: 'Kaguya-sama wa Kokurasetai: Ultra Romantic',
+                        imageUrl: 'assets/anime2.jpg',
+                        episode: '12',
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
-    );;
+    );
   }
 }

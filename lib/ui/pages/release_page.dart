@@ -28,9 +28,11 @@ class RelasePage extends StatelessWidget {
 
     Widget title() {
       return Container(
-        margin: EdgeInsets.symmetric(
+        margin: EdgeInsets.only(
+          top: 40,
+        ),
+        padding: EdgeInsets.symmetric(
           horizontal: defaultMargin,
-          vertical: defaultMargin,
         ),
         child: Text(
           'Relesase Date',
@@ -45,7 +47,7 @@ class RelasePage extends StatelessWidget {
     Widget dayRelease() {
       return Container(
         margin: EdgeInsets.only(
-          top: 60,
+          top: 90,
           left: defaultMargin,
           right: defaultMargin,
         ),

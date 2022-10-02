@@ -5,23 +5,33 @@ class FridayReleasePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(
-        top: 120,
-        bottom: 100,
-      ),
-      child: ListView(
-        children: [
-          Column(
-            children: [
-              AnimeTile(
-                name: 'Shingeki no Kyojin: The Final Season Part 2',
-                imageUrl: 'assets/anime2.jpg',
-                episode: '12',
+    return SafeArea(
+      child: Container(
+        margin: const EdgeInsets.only(
+          top: 130,
+        ),
+        child: ListView(
+          children: [
+            Container(
+              margin: EdgeInsets.only(
+                bottom: 100,
               ),
-            ],
-          ),
-        ],
+              child: Stack(
+                children: [
+                  Column(
+                    children: [
+                      AnimeTile(
+                        name: 'Shingeki no Kyojin Season 3',
+                        imageUrl: 'assets/anime8.jpg',
+                        episode: '12',
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

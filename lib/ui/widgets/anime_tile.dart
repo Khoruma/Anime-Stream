@@ -15,13 +15,17 @@ class AnimeTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: defaultMargin, vertical: 5),
+      margin: EdgeInsets.symmetric(
+        horizontal: defaultMargin,
+        vertical: 5,
+      ),
       padding: const EdgeInsets.all(
         10,
       ),
       decoration: BoxDecoration(
-          color: kGreyColor.withOpacity(0.2),
-          borderRadius: BorderRadius.circular(defaultRadius)),
+        color: kGreyColor.withOpacity(0.2),
+        borderRadius: BorderRadius.circular(defaultRadius),
+      ),
       child: Column(
         children: [
           Row(
