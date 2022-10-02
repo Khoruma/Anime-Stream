@@ -1,7 +1,9 @@
 import 'dart:async';
 
 import 'package:anime_stream/cubit/page_cubit.dart';
+import 'package:anime_stream/cubit/release_page_cubit.dart';
 import 'package:anime_stream/shared/shared.dart';
+import 'package:anime_stream/ui/pages/day_release/day_release.dart';
 import 'package:anime_stream/ui/widgets/widgets.dart';
 import 'package:expandable_text/expandable_text.dart';
 import 'package:flutter/material.dart';

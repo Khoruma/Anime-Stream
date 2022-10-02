@@ -5,6 +5,27 @@ class RelasePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    buildContent(int currentIndex) {
+      switch (currentIndex) {
+        case 0:
+          return SundayReleasePage();
+        case 1:
+          return MondayReleasePage();
+        case 2:
+          return TuesdayReleasePage();
+        case 3:
+          return WednesdayReleasePage();
+        case 4:
+          return ThursdayReleasePage();
+        case 5:
+          return FridayReleasePage();
+        case 6:
+          return SaturdayReleasePage();
+        default:
+          return SundayReleasePage();
+      }
+    }
+
     Widget title() {
       return Container(
         margin: EdgeInsets.symmetric(
@@ -23,212 +44,60 @@ class RelasePage extends StatelessWidget {
 
     Widget dayRelease() {
       return Container(
-        margin:
-            EdgeInsets.only(top: 15, left: defaultMargin, right: defaultMargin),
+        margin: EdgeInsets.only(
+          top: 60,
+          left: defaultMargin,
+          right: defaultMargin,
+        ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Container(
-              height: 40,
-              width: 40,
-              decoration: BoxDecoration(
-                color: kPrimaryColor,
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Center(
-                child: Text(
-                  'Sun',
-                  style: whiteTextStyle.copyWith(
-                    fontSize: 12,
-                    fontWeight: light,
-                  ),
-                ),
-              ),
+            CustomDayRelaseItem(
+              index: 0,
+              day: 'Sun',
             ),
-            Container(
-              height: 40,
-              width: 40,
-              decoration: BoxDecoration(
-                color: kPrimaryColor,
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Center(
-                child: Text(
-                  'Sun',
-                  style: whiteTextStyle.copyWith(
-                    fontSize: 12,
-                    fontWeight: light,
-                  ),
-                ),
-              ),
+            CustomDayRelaseItem(
+              index: 1,
+              day: 'Mon',
             ),
-            Container(
-              height: 40,
-              width: 40,
-              decoration: BoxDecoration(
-                color: kPrimaryColor,
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Center(
-                child: Text(
-                  'Sun',
-                  style: whiteTextStyle.copyWith(
-                    fontSize: 12,
-                    fontWeight: light,
-                  ),
-                ),
-              ),
+            CustomDayRelaseItem(
+              index: 2,
+              day: 'Tue',
             ),
-            Container(
-              height: 40,
-              width: 40,
-              decoration: BoxDecoration(
-                color: kPrimaryColor,
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Center(
-                child: Text(
-                  'Sun',
-                  style: whiteTextStyle.copyWith(
-                    fontSize: 12,
-                    fontWeight: light,
-                  ),
-                ),
-              ),
+            CustomDayRelaseItem(
+              index: 3,
+              day: 'Wed',
             ),
-            Container(
-              height: 40,
-              width: 40,
-              decoration: BoxDecoration(
-                color: kPrimaryColor,
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Center(
-                child: Text(
-                  'Sun',
-                  style: whiteTextStyle.copyWith(
-                    fontSize: 12,
-                    fontWeight: light,
-                  ),
-                ),
-              ),
+            CustomDayRelaseItem(
+              index: 4,
+              day: 'Thu',
             ),
-            Container(
-              height: 40,
-              width: 40,
-              decoration: BoxDecoration(
-                color: kPrimaryColor,
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Center(
-                child: Text(
-                  'Sun',
-                  style: whiteTextStyle.copyWith(
-                    fontSize: 12,
-                    fontWeight: light,
-                  ),
-                ),
-              ),
+            CustomDayRelaseItem(
+              index: 5,
+              day: 'Fri',
             ),
-            Container(
-              height: 40,
-              width: 40,
-              decoration: BoxDecoration(
-                color: kPrimaryColor,
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Center(
-                child: Text(
-                  'Sun',
-                  style: whiteTextStyle.copyWith(
-                    fontSize: 12,
-                    fontWeight: light,
-                  ),
-                ),
-              ),
+            CustomDayRelaseItem(
+              index: 6,
+              day: 'Sat',
             ),
           ],
         ),
       );
     }
 
-    Widget animeTile() {
-      return Container(
-        margin: EdgeInsets.only(
-          top: 20,
-          left: defaultMargin,
-          right: defaultMargin,
-          bottom: 15,
-        ),
-        padding: const EdgeInsets.all(
-          10,
-        ),
-        decoration: BoxDecoration(
-            color: kGreyColor.withOpacity(0.2),
-            borderRadius: BorderRadius.circular(defaultRadius)),
-        child: Column(
-          children: [
-            Row(
-              children: [
-                Container(
-                  height: 100,
-                  width: 70,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      fit: BoxFit.cover,
-                      image: AssetImage('assets/anime8.jpg'),
-                    ),
-                    borderRadius: BorderRadius.circular(
-                      10,
-                    ),
-                  ),
-                ),
-                Expanded(
-                    child: Container(
-                  margin: const EdgeInsets.only(
-                    left: 15,
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Shingeki no Kyojin: The Final Season Part 2',
-                        style: whiteTextStyle.copyWith(
-                          fontSize: 17,
-                          fontWeight: semiBold,
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 5,
-                      ),
-                      Text(
-                        'Episode 12',
-                        style: whiteTextStyle.copyWith(
-                          fontSize: 15,
-                          fontWeight: light,
-                        ),
-                      )
-                    ],
-                  ),
-                ))
-              ],
-            )
-          ],
-        ),
-      );
-    }
-
-    return Scaffold(
-      backgroundColor: kBackgroudColor,
-      body: SafeArea(
-        child: ListView(
-          children: [
-            title(),
-            dayRelease(),
-            animeTile(),
-          ],
-        ),
-      ),
+    return BlocBuilder<ReleasePageCubit, int>(
+      builder: (context, currentIndex) {
+        return Scaffold(
+          backgroundColor: kBackgroudColor,
+          body: Stack(
+            children: [
+              title(),
+              buildContent(currentIndex),
+              dayRelease(),
+            ],
+          ),
+        );
+      },
     );
   }
 }

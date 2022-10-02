@@ -5,6 +5,13 @@ class FavoritesPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(child: Text('Favorite Page'),);
+    return Scaffold(
+      backgroundColor: kBackgroudColor,
+      body: ListView(
+        children: [
+          
+        ],
+      ),
+    );
   }
 }

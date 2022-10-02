@@ -1,4 +1,5 @@
 import 'package:anime_stream/cubit/page_cubit.dart';
+import 'package:anime_stream/cubit/release_page_cubit.dart';
 import 'package:anime_stream/ui/pages/pages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -18,6 +19,9 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => PageCubit(),
         ),
+        BlocProvider(
+          create: (context) => ReleasePageCubit(),
+        ),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -27,7 +31,7 @@ class MyApp extends StatelessWidget {
           '/sign-up': (context) => SignUpPage(),
           '/sign-in': (context) => SignInPage(),
           '/main-page': (context) => const HomePage(),
-          '/detail-page': (context) =>  DetailPage(),
+          '/detail-page': (context) => DetailPage(),
         },
       ),
     );

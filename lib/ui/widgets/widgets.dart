@@ -1,6 +1,8 @@
 import 'package:anime_stream/cubit/page_cubit.dart';
+import 'package:anime_stream/cubit/release_page_cubit.dart';
 import 'package:anime_stream/shared/shared.dart';
 import 'package:anime_stream/ui/pages/pages.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -10,3 +12,5 @@ part 'anime_ongoing_card.dart';
 part 'anime_complete_card.dart';
 part 'custom_title.dart';
 part 'custom_bottom_navigation_items.dart';
+part 'custom_day_release_items.dart';
+part 'anime_tile.dart';
