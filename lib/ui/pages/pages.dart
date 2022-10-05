@@ -18,3 +18,5 @@ part 'favorites_pages.dart';
 part 'profile_page.dart';
 part 'main_page.dart';
 part 'detail_page.dart';
+part 'edit_profile_page.dart';
+part 'history_page.dart';
